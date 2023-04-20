@@ -12,7 +12,7 @@ export default function MealItem (props){
         <div className={classes.price}>{Price}</div>
     </div>
     <div>
-        <MealItemForm/>
+        <MealItemForm id={props.id}/>
     </div>
     </li>);
 }
