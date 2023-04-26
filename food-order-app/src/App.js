@@ -4,7 +4,7 @@ import Header from './Components/Layout/Header';
 import { useState} from 'react';
 import Meals from './Components/Meals/Meals';
 import Cart from './Components/Cart/Cart';
-import CartProvider from './Components/Store/CartProvider';
+import CartProvider from './Store/CartProvider';
 
 function App() {
 
