@@ -1,33 +1,19 @@
 
 import './App.css';
-import Header from './Components/Layout/Header';
-import { useState} from 'react';
-import Meals from './Components/Meals/Meals';
-import Cart from './Components/Cart/Cart';
-import CartProvider from './Store/CartProvider';
+
+import {createBrowserRouter,RouterProvider} from 'react-router-dom'
+
+import HomePage from './Pages/Home';
+
+const router =createBrowserRouter([
+  {path:'/', element :<HomePage/>},
+
+]);
 
 function App() {
 
-  const [cartIsShown,setCartIsShown] = useState(false);
+ return <RouterProvider router={router}/>
 
-  const showCartHandler =()=>{
-    setCartIsShown(true);
-  }
-
-  const hideCartHandler = ()=>{
-    setCartIsShown(false);
-  }
-
-  return (
-    <CartProvider>
-        {cartIsShown&&<Cart onHideCart={hideCartHandler}/>}
-         <Header onShowCart={showCartHandler} />
-        <main>
-           <Meals/>
-        </main>
-   
-    </CartProvider>
-  );
 }
 
 export default App;
